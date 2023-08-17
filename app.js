@@ -9,12 +9,12 @@ app.get('/', (req, res) => {
 })
 
 // api endpoint
-app.post('/registration', (req, res) => {
-    const { username, email } = req.body
-    console.log(req.body)
+app.post('/autofill', (req, res) => {
+    const body = req.body
+    console.log(body)
 
     // resend json data
-    res.status(200).json({ username, email })
+    res.status(200).json(body)
 })
 
 app.listen(port, () => {
