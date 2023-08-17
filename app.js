@@ -24,17 +24,34 @@ app.put('/autofill', async (req, res) => {
 
 
 
+        // {
+        //     fieldValues: deriveAutofillPolicyUpdates(data, updatesToBeMade),
+        //     updateExposures: newUpdateExposures?.length ? newUpdateExposures : undefined,
+        //     addExposures: newCreateExposures?.length ? newCreateExposures : undefined,
+        //     updateFieldGroups: newUpdateFieldGroups?.length ? newUpdateFieldGroups : undefined,
+        //     addFieldGroups: newCreateFieldGroups?.length ? newCreateFieldGroups : undefined,
+        //   }
+
+
     // resend json data
+    // res.status(200).json({
+    //     ...body,
+    //     updates: {
+    //         ...body.updates,
+    //         fieldValues: {
+    //             ...body.updates.fieldValues,
+    //             policyAgentName: [
+    //                 result
+    //             ]
+    //         }
+    //     }
+    // })
+
     res.status(200).json({
-        ...body,
-        updates: {
-            ...body.updates,
-            fieldValues: {
-                ...body.updates.fieldValues,
-                policyAgentName: [
-                    result
-                ]
-            }
+        fieldValues: {
+            policyAgentName: [
+                                result
+                            ]
         }
     })
 })
