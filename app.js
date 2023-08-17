@@ -10,9 +10,9 @@ app.get('/', (req, res) => {
 })
 
 // api endpoint
-app.put('/autofill', async (req, res) => {
+app.post('/autofill', async (req, res) => {
     const body = req.body
-    console.log(body);
+    // console.log(body);
 
     const url = "https://jsonplaceholder.typicode.com/comments?id=1"
 
