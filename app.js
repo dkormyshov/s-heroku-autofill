@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 
 // api endpoint
-app.post('/autofill', async (req, res) => {
+app.put('/autofill', async (req, res) => {
     const body = req.body
     console.log(body);
 
@@ -31,7 +31,7 @@ app.post('/autofill', async (req, res) => {
             ...body.updates,
             fieldValues: {
                 ...body.updates.fieldValues,
-                policySafeDriverDiscountMonths: [
+                policyAgentName: [
                     result
                 ]
             }
